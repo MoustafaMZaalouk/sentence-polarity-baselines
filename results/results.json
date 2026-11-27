@@ -1,0 +1,173 @@
+{
+  "dataset": "Pang & Lee sentence polarity v1.0",
+  "n_examples_used": 10662,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "protocol": "80/20 stratified random split per seed; hyperparameters fixed in advance, not tuned on the test split",
+  "subsample_smoke_run": false,
+  "models": {
+    "majority": {
+      "accuracy_mean": 0.4998,
+      "accuracy_std_over_seeds": 0.0,
+      "accuracy_pooled_bootstrap95": [
+        0.4896,
+        0.509
+      ],
+      "ece_mean": 0.5002,
+      "per_seed_accuracy": [
+        0.4998,
+        0.4998,
+        0.4998,
+        0.4998,
+        0.4998
+      ]
+    },
+    "nb_unigram": {
+      "accuracy_mean": 0.7793,
+      "accuracy_std_over_seeds": 0.0077,
+      "accuracy_pooled_bootstrap95": [
+        0.7709,
+        0.7872
+      ],
+      "ece_mean": 0.0893,
+      "per_seed_accuracy": [
+        0.7731,
+        0.7731,
+        0.7834,
+        0.7909,
+        0.7759
+      ]
+    },
+    "lr_word12": {
+      "accuracy_mean": 0.7756,
+      "accuracy_std_over_seeds": 0.0105,
+      "accuracy_pooled_bootstrap95": [
+        0.7677,
+        0.7835
+      ],
+      "ece_mean": 0.0459,
+      "per_seed_accuracy": [
+        0.7693,
+        0.775,
+        0.7642,
+        0.7918,
+        0.7778
+      ]
+    },
+    "lr_word12_char": {
+      "accuracy_mean": 0.7872,
+      "accuracy_std_over_seeds": 0.0119,
+      "accuracy_pooled_bootstrap95": [
+        0.7795,
+        0.7945
+      ],
+      "ece_mean": 0.0226,
+      "per_seed_accuracy": [
+        0.7717,
+        0.7909,
+        0.7792,
+        0.8022,
+        0.7918
+      ]
+    },
+    "svm_word12_calibrated": {
+      "accuracy_mean": 0.7753,
+      "accuracy_std_over_seeds": 0.0093,
+      "accuracy_pooled_bootstrap95": [
+        0.7673,
+        0.7831
+      ],
+      "ece_mean": 0.0245,
+      "per_seed_accuracy": [
+        0.7722,
+        0.7768,
+        0.7632,
+        0.789,
+        0.7754
+      ]
+    }
+  },
+  "most_confident_errors_lr_word12_char_seed0": [
+    {
+      "text": "a mess , but it's a sincere mess .",
+      "label": 1,
+      "p_pos": 0.019
+    },
+    {
+      "text": "bravo reveals the true intent of her film by carefully selecting interview subjects who will construct a portrait of castro so predominantly charitable it can only be seen as propaganda .",
+      "label": 0,
+      "p_pos": 0.971
+    },
+    {
+      "text": "the sentimental script has problems , but the actors pick up the slack .",
+      "label": 1,
+      "p_pos": 0.029
+    },
+    {
+      "text": "a teasing drama whose relentless good-deed/bad-deed reversals are just interesting enough to make a sinner like me pray for an even more interesting , less symmetrical , less obviously cross-shaped creation .",
+      "label": 1,
+      "p_pos": 0.034
+    },
+    {
+      "text": "the thing about guys like evans is this : you're never quite sure where self-promotion ends and the truth begins . but as you watch the movie , you're too interested to care .",
+      "label": 1,
+      "p_pos": 0.038
+    },
+    {
+      "text": "kept aloft largely by a comically adept ensemble .",
+      "label": 1,
+      "p_pos": 0.041
+    },
+    {
+      "text": "there's just something about watching a squad of psychopathic underdogs whale the tar out of unsuspecting lawmen that reaches across time and distance .",
+      "label": 1,
+      "p_pos": 0.045
+    },
+    {
+      "text": "not a bad journey at all .",
+      "label": 1,
+      "p_pos": 0.054
+    },
+    {
+      "text": "sound the trumpets : for the first time since desperately seeking susan , madonna doesn't suck as an actress .",
+      "label": 1,
+      "p_pos": 0.056
+    },
+    {
+      "text": "the average local news columnist has a bigger rant on the war between modern landscape architecture and small-town america .",
+      "label": 0,
+      "p_pos": 0.943
+    },
+    {
+      "text": "care deftly captures the wonder and menace of growing up , but he never really embraces the joy of fuhrman's destructive escapism or the grace-in-rebellion found by his characters .",
+      "label": 0,
+      "p_pos": 0.942
+    },
+    {
+      "text": "this horror-comedy doesn't go for the usual obvious laughs at the expense of cheap-looking monsters -- unless you count elvira's hooters .",
+      "label": 1,
+      "p_pos": 0.062
+    },
+    {
+      "text": "if the film fails to fulfill its own ambitious goals , it nonetheless sustains interest during the long build-up of expository material .",
+      "label": 1,
+      "p_pos": 0.066
+    },
+    {
+      "text": "originality ain't on the menu , but there's never a dull moment in the giant spider invasion comic chiller .",
+      "label": 1,
+      "p_pos": 0.069
+    },
+    {
+      "text": "tambor and clayburgh make an appealing couple \u0097 he's understated and sardonic , she's appealingly manic and energetic . both deserve better .",
+      "label": 0,
+      "p_pos": 0.927
+    }
+  ],
+  "runtime_seconds": 13.4
+}
