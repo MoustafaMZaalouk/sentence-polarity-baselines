@@ -1,0 +1,28 @@
+name: Initialize approved source
+on: [workflow_dispatch]
+permissions:
+  contents: write
+jobs:
+  initialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract hash-verified reviewed source
+        shell: python
+        run: |
+          import pathlib,base64,lzma,tarfile,io,hashlib
+          data=base64.b64decode(''.join(p.read_text() for p in sorted(pathlib.Path('.publish').glob('part*.txt'))))
+          assert hashlib.sha256(data).hexdigest()=='35a5860b8936672c80ebee0515e601382dd1f4bb8c29688dc2578b9514575512'
+          with tarfile.open(fileobj=io.BytesIO(lzma.decompress(data))) as t:
+              for m in t.getmembers():
+                  p=pathlib.Path(m.name)
+                  assert m.isfile() and not p.is_absolute() and '..' not in p.parts
+              t.extractall('.', members=[m for m in t.getmembers() if not m.name.startswith('.github/workflows/')])
+      - name: Publish approved source
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          rm -r .publish
+          git add -A
+          git commit -m 'Publish reviewed AI-assisted sentence polarity baselines'
+          git push
